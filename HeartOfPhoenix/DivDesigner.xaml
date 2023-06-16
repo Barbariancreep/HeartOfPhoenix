@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="HeartOfPhoenix.DivDesigner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeartOfPhoenix"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel, IsDesignTimeCreatable=True}">
+
+    <UserControl.Resources>
+        <RadialGradientBrush x:Key="paperGradient" GradientOrigin="0.5, 0.5" RadiusX="0.8" RadiusY="0.8">
+            <GradientStop Color="#ddc998" Offset="0.0" />
+            <GradientStop Color="#887751" Offset="1.0" />
+        </RadialGradientBrush>
+        
+        <Style x:Key="StatsHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="{StaticResource paperGradient}"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left">
+            
+        </StackPanel>
+
+        <DataGrid DockPanel.Dock="Right" x:Name="DivStatsGrid" 
+                  Background="{StaticResource paperGradient}" RowBackground="Transparent" 
+                  ItemsSource="{Binding DivStatsRows}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Base Stats" Width="*" HeaderStyle="{StaticResource StatsHeader}" 
+                                    Binding="{Binding BaseStat}"/>
+                <DataGridTextColumn Header="Combat Stats" Width="*" HeaderStyle="{StaticResource StatsHeader}"
+                                    Binding="{Binding CombatStat}"/>
+                <DataGridTextColumn Header="Equipment Cost" Width="*" HeaderStyle="{StaticResource StatsHeader}"
+                                    Binding="{Binding EquipmentCost}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

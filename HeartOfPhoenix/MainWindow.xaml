@@ -1,0 +1,29 @@
+﻿<Window x:Class="HeartOfPhoenix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeartOfPhoenix"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel, IsDesignTimeCreatable=True}"
+        Title="Heart Of Phoenix" Height="450" Width="800" Icon="kity.ico">
+    
+    <Window.Resources>
+        
+    </Window.Resources>
+
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Div Designer">
+                <local:DivDesigner x:Name="DivDesignerControl"/>
+            </TabItem>
+            <TabItem Header="Battle Sim">
+                
+            </TabItem>
+            <TabItem Header="Land Doctrine">
+
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
